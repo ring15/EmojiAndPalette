@@ -1,10 +1,11 @@
 package com.founq.sdk.emojiandpalette;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         tvMutedShallow = findViewById(R.id.tv_palette_muted_shallow);
         tvMutedDarkShallow = findViewById(R.id.tv_palette_muted_dark_shallow);
         tvMutedLightShallow = findViewById(R.id.tv_palette_muted_light_shallow);
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button:
+                startActivity(new Intent(this, EmojiActivity.class));
+                break;
+        }
     }
 
     @Override
